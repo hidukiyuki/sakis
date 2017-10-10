@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+　 TODO: All Contents
+---------------------------------------------------------------*/
+body {
+  background-color: #E6EBE0;
+  border-top: 4px solid #AF2A69;
+  color: #666;
+  font-family: 'Roboto','source-han-sans-japanese','Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,sans-serif;
+  line-height: 1.7em;
+  margin: 0;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+a {height: 0;text-decoration: none;margin: 0;}
+a:link,a:visited,a:hover {color:#4082b1;}
+a:focus {outline: none;}
+
+p {margin: 0;padding: 0;}
+/*
+*,:before, :after {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0;
+} */
+
+/* TODO: GC scrollbar
+-------------------------------------*/
+.scrollbox::-webkit-scrollbar {
+  background: #eee;
+  width: 12px;
+}
+.scrollbox::-webkit-scrollbar-button,.scrollbox::-webkit-scrollbar-corner {
+  display: none;
+}
+.scrollbox::-webkit-scrollbar-thumb {
+  background: #999;
+}
+/*--------------------------------------------------------------
+　 TODO: HEADER
+---------------------------------------------------------------*/
+#header-wrap {
+  position: relative;
+  background: url(../img/hiduki_logo.png) no-repeat center center;
+  background-size: cover;
+  height: 25vh;
+  min-height: 60px;
+}
+#header-wrap::before {
+  content: "";
+  position: absolute;
+  background-color:rgba(0,0,0,.1);
+  height: 25vh;
+  min-height: 60px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+.header-text {
+  position: absolute;
+  color: #fff;
+  height: 60px;
+  width: 100%;
+  transition: 350ms ease-in 20ms;
+  z-index: 11;
+}
+.header-text:hover {
+  background-color: rgba(0, 0, 0, .8);
+  transition: 450ms ease-out 10ms;
+}
+h1 {
+  box-sizing: border-box;
+  font: italic 700 1.313rem 'Cinzel', serif;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 0 0 40px;
+  line-height: 60px;
+}
+/*--------------------------------------------------------------
+　 TODO: FOOTER
+---------------------------------------------------------------*/
+#footer-wrap {
+  background-color: #000;
+}
+.misaki-line::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background-image: linear-gradient(to right,
+    rgba(255, 62, 127, 1.0) 49.9%,
+    rgba(252, 239, 183, 1.0) 49.9%,
+    rgba(252, 239, 183, 1.0) 66.6%,
+    rgba(175, 42, 105, 1.0) 66.6%,
+    rgba(175, 42, 105, 1.0) 83.3%,
+    rgba(194, 164, 182, 1.0) 83.3%,
+    rgba(194, 164, 182, 1.0) 100%);
+  z-index: 1;
+}
+.foot-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 1170px;
+  padding: 20px 0 50px 0;
+  margin: 0 auto;
+}
+.foot-box {
+  flex: 0 0 30%;
+  margin-bottom: 20px;
+}
+.foot-box:last-child {
+  margin-bottom: 0;
+}
+.foot-cell {
+  color: #fff;
+  max-width: 80%;
+  margin: .5rem auto;
+}
+.foot-title {
+  font: italic bold 1.125rem/1.7 'Cinzel', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 1.2em;
+}
+.foot-title::after {
+  content: "";
+  background-color: #fff;
+  display: block;
+  height: 1px;
+  width: 112%;
+  margin: 0 0 0 -6%;
+  position: relative;
+}
+.foot-cell p.code {
+  text-align: center;
+  font: .875rem/1.2 'Vollkorn', sans-serif;
+  margin: 1.2rem 0;
+}
+.foot-cell ul.social-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 1.2rem auto .2rem;
+}
+.foot-cell li.social {
+  display: inline-flex;
+  box-sizing: border-box;
+  flex: 0 1 50%;
+  font: 1.063rem 'Oswald',sans-serif;
+}
+.foot-cell li.social:nth-child(2n+1) {
+  padding-right: 6px;
+  justify-content: flex-end;
+}
+.foot-cell li.social:nth-child(2n) {
+  padding-left: 6px;
+}
+.foot-cell li.social a {
+  display: inherit;
+  align-items: center;
+  height: auto;
+}
+.foot-cell li img {
+  height: 28px;
+  width: 28px;
+}
+.foot-cell > p.suptext {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.foot-cell > p.site-tool {
+  text-align: center;
+  font: .875rem/1.7 'Oswald', sans-serif;
+}
+#copy {
+  text-align: right;
+}
+small {
+  font: .75rem/1.7 'Oswald', sans-serif;
+}
+/*--------------------------------------------------------------
+　 TODO: Media
+---------------------------------------------------------------*/
+@media screen and (max-width: 899px) {
+.foot-box {
+  flex: 0 0 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+.foot-box {
+  flex: 0 0 100%;
+}
+}

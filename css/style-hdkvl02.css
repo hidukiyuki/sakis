@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+　 TODO: Contents Layout
+---------------------------------------------------------------*/
+#main-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  padding: 20px 20px 20px 30px;
+  margin: 0 auto;
+}
+.contents-flex {
+  font-size: .913rem;
+  line-height: 1.7;
+  width: 100%;
+  margin: 80px 0 0 15%;
+  margin: 0 0 0 15%;
+}
+.contents {
+  background-color: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 1px -2px 4px .5px rgba(0,0,0,.15);
+  padding: 24px 0 8px;
+  border-radius: 10px 0;
+}
+.contents:last-child {
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+　 TODO: ARTICLE
+---------------------------------------------------------------*/
+.contents::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 60px;
+  width: 9px;
+  margin: -8px 0 0 -9px;
+  background: #9BC1BC;
+  background-image: linear-gradient(to right,
+    transparent 80%,
+    rgba(252, 239, 183, 1.0) 80%);
+  box-shadow: -1px -1px 2px .5px rgba(0,0,0,.15);
+  z-index: -1;
+  transition: 350ms ease-in 20ms;
+}
+.contents::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #9BC1BC;
+  z-index: 1;
+}
+.contents-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 14px 8px;
+  background: url(../img/bg_pattern.png) center top repeat;
+}
+.contents-title {
+  flex: 0 0 30%;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+.contents-h2 {
+  font: 4.063rem/1 "Orbitron", sans-serif;
+  letter-spacing: -2px;
+  color: rgba(102, 102, 102, .2);
+  text-align: right;
+  margin: 0 0 0 2%;
+}
+.contents-main {
+  flex: 0 0 70%;
+  margin-top: .5rem;
+}
+.contents-prof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: .813rem;
+}
+.contents-prof div:nth-of-type(1) {
+  flex: 0 1 auto;
+}
+.contents-prof div:nth-of-type(2) {
+  flex: 0 0 auto;
+}
+.contents-prof div.prof img {
+  height: 160px;
+  width: 160px;
+  margin: 0;
+  -webkit-clip-path: circle(50% at 75% 50%);
+  clip-path: circle(50% at 75% 50%);
+}
+/*--------------------------------------------------------------
+　 TODO: Media
+---------------------------------------------------------------*/
+@media screen and (max-width: 809px) {
+#main-wrap {
+  padding: 20px 3% 20px 4%;
+}
+.contents-flex {
+  flex: 0 1 100%;
+  font-size: .875rem;
+  margin: 0;
+}
+.contents-body {
+  flex-direction: column;
+}
+.contents-title {
+  ms-writing-mode: lr-bt;
+  writing-mode: horizontal-tb;
+}
+.contents-h2 {
+  color: rgba(102, 102, 102, 1);
+  font: 1.5rem/1 "Orbitron",sans-serif;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 1.2rem 0 1rem;
+  margin: 0;
+}
+}
+@media screen and (max-width: 375px) {
+#main-wrap {
+  padding: 20px 0 20px 15px;
+}
+.contents-prof {
+  flex-direction: column;
+}
+}
+
+.c-body {
+  padding: 4px 0 8px 14px;
+}
+.c-m {
+  display: flex;
+}
+.c-m div:nth-of-type(1) {
+  flex: 0 0 40%;
+}
+.c-m div:nth-of-type(2) {
+  position: relative;
+  flex: 0 0 60%;
+  overflow: hidden;
+  min-height: 400px;
+  max-height: 600px;
+}
+.c-m div:nth-of-type(2) img {
+  position: absolute;
+  top: 0;
+  left: 2em;
+  max-width: 400px;
+  box-shadow: 0 30px 30px rgba(0,0,0,.4);
+}
